@@ -5,7 +5,10 @@ body {
     background-color: #1b1b32;
     color: #f5f6f7;
     font-family: tahoma;
-    background-image: url()
+  }
+  head{
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    opacity: 0.5;
   }
 
   h1, p {
