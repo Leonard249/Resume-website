@@ -23,6 +23,7 @@
   }
   
   .cat-left-ear {
+    position: absolute;
     top: -26px;
     left: -31px;
     /*z-index -> used to define the order of overlapping HTML elements*/
