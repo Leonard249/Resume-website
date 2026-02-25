@@ -33,23 +33,36 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" style={{ padding: '5rem 2rem', backgroundColor: '#fafafa' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                <h2 style={{ fontSize: '2rem', marginBottom: '2.5rem', color: '#111' }}>Work Experience & Research</h2>
-                {experiences.map((exp, index) => (
-                    <div key={index} style={{ marginBottom: '3rem', borderLeft: '3px solid #111', paddingLeft: '1.5rem' }}>
-                        <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.3rem' }}>{exp.company}</h3>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', color: '#666', marginBottom: '1rem', fontSize: '0.95rem' }}>
-                            <span style={{ fontWeight: '600' }}>{exp.role}</span>
-                            <span>{exp.period}</span>
+        <section id="experience" className="py-32 px-6 bg-gray-50 border-y border-gray-100">
+            <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-16 tracking-tight text-center">Experience & Research</h2>
+
+                <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+                    {experiences.map((exp, index) => (
+                        <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+
+                            {/* Timeline Node */}
+                            <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-200 group-hover:bg-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors duration-300"></div>
+
+                            {/* Content Card */}
+                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                                <div className="flex flex-col mb-4">
+                                    <span className="text-sm font-bold text-blue-600 mb-1">{exp.period}</span>
+                                    <h3 className="text-xl font-bold text-gray-900">{exp.company}</h3>
+                                    <span className="font-medium text-gray-500 text-sm mt-1">{exp.role}</span>
+                                </div>
+                                <ul className="list-none space-y-2 text-gray-600 text-sm leading-relaxed">
+                                    {exp.bullets.map((bullet, i) => (
+                                        <li key={i} className="relative pl-4 before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gray-300 before:rounded-full group-hover:before:bg-blue-400 transition-colors">
+                                            {bullet}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
                         </div>
-                        <ul style={{ color: '#444', lineHeight: '1.6', paddingLeft: '1rem', margin: 0 }}>
-                            {exp.bullets.map((bullet, i) => (
-                                <li key={i} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );

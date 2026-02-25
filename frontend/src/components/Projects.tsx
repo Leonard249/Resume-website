@@ -4,39 +4,48 @@ const Projects = () => {
             name: "Personal Academic RAG Engine",
             period: "Jan 2026 - Feb 2026",
             tech: ["LangChain", "GPT-4o-mini", "ChromaDB"],
-            desc: "Indexed 260+ PDFs across 22 NTU modules, reducing LLM hallucination rate by 30% for coursework queries."
+            desc: "Indexed 260+ PDFs across 22 NTU modules, reducing LLM hallucination rate by 30% and delivering citation-backed answers for complex coursework queries."
         },
         {
             name: "Audio2Tabs",
             period: "Aug 2024 - Sep 2024",
             tech: ["DSP", "Fast Fourier Transform", "LSTM"],
-            desc: "Designed an end-to-end audio-to-notation inference system converting acoustic signals into structured instrument tabs."
+            desc: "Designed an end-to-end audio-to-notation inference system converting unstructured acoustic signals into structured instrument tabs."
         },
         {
-            name: "Deep Learning Week Hackathon (Top 8 Finalist)",
+            name: "Deep Learning Week Hackathon",
             period: "Mar 2024",
             tech: ["PyTorch", "DQN", "Random Forest"],
-            desc: "Developed a PyTorch-based DQN reinforcement learning agent to autonomously optimise building HVAC temperatures."
+            desc: "Developed a PyTorch-based DQN reinforcement learning agent to autonomously optimise building HVAC temperatures. (Top 8 Finalist)"
         }
     ];
 
     return (
-        <section id="projects" style={{ padding: '5rem 2rem', backgroundColor: '#fff' }}>
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                <h2 style={{ fontSize: '2rem', marginBottom: '2.5rem', color: '#111' }}>Academic & Personal Projects</h2>
-                <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+        <section id="projects" className="py-32 px-6 bg-white">
+            <div className="max-w-6xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-gray-900 mb-12 tracking-tight">Academic & Personal Projects</h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projectList.map((project, index) => (
-                        <div key={index} style={{ padding: '1.5rem', border: '1px solid #eaeaea', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
-                            <h3 style={{ margin: '0 0 0.5rem 0' }}>{project.name}</h3>
-                            <p style={{ color: '#888', fontSize: '0.85rem', margin: '0 0 1rem 0' }}>{project.period}</p>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+                        <div key={index} className="group relative p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-blue-100 transition-all duration-300 overflow-hidden flex flex-col">
+
+                            {/* Subtle hover gradient in the corner */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            <p className="text-xs font-bold text-gray-400 mb-2 tracking-wider uppercase">{project.period}</p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">{project.name}</h3>
+
+                            <div className="flex flex-wrap gap-2 mb-6">
                                 {project.tech.map(t => (
-                                    <span key={t} style={{ backgroundColor: '#f5f5f5', color: '#333', padding: '0.3rem 0.6rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: '500' }}>
+                                    <span key={t} className="bg-gray-50 text-gray-600 border border-gray-100 px-3 py-1 rounded-md text-xs font-semibold group-hover:bg-white group-hover:border-gray-200 transition-colors">
                                         {t}
                                     </span>
                                 ))}
                             </div>
-                            <p style={{ color: '#555', lineHeight: '1.5', margin: 0 }}>{project.desc}</p>
+
+                            <p className="text-gray-600 leading-relaxed flex-grow text-sm">
+                                {project.desc}
+                            </p>
                         </div>
                     ))}
                 </div>
