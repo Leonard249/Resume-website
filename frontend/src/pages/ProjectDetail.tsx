@@ -1,12 +1,12 @@
 // src/pages/ProjectDetail.tsx
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react'; // add in useEffect
 
 const ProjectDetail = () => {
     const { slug } = useParams();
 
     // Phase 2: This state will eventually be powered by a fetch() call to your laptop!
-    const [isComputeNodeOnline, setIsComputeNodeOnline] = useState(false);
+    const [isComputeNodeOnline] = useState(false); // add in setIsComputeNodeOnline
 
     // In a real app, you'd fetch this data from an array or database based on the 'slug'
     // For now, we just use a generic layout to show the UI
