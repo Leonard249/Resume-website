@@ -21,7 +21,7 @@ const Hero = () => {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed mb-10">
-                    Final-year Computer Science student at NTU (graduating Aug 2026) specialising in deploying VLMs and building real-world AI pipelines.
+                    Final-year Computer Science student at NTU (graduating Aug 2026) specialising in deploying LLMs and building real-world AI pipelines.
                 </p>
 
                 <div className="flex gap-4">
