@@ -1,4 +1,4 @@
-# Resume-websites 
+# Resume-website
 
 ## Deployment steps 
 1. pnpm run build
